@@ -1,0 +1,17 @@
+section.usuario{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img.avatar{
+    height: 17rem;
+    width: 17rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top:2rem;
+    box-shadow: 0px 0px 10px grey;
+}
+p.usuarionombre{
+    font-size: 5rem;
+}

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:'Courier New'
+}
+
+html{
+    --colorHeader:rgba(19,194,171,255);
+    min-width: 390px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section{
+ height: auto;
+}
+p.footer{
+    margin: 2rem;
+}
+

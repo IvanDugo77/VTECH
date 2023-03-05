@@ -1,0 +1,14 @@
+section.userpage{
+    position: relative;
+}
+button.subir{
+    border-radius: 2rem 2rem 0rem 2rem;
+    margin-left:10%;
+}
+h2.Titulo{
+    margin:2rem;
+    font-weight: 900;
+}
+section.tuC{
+    border-top:solid 1px rgb(196, 195, 195);
+}

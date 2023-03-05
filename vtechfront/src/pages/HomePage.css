@@ -1,0 +1,74 @@
+div.Slogan{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    
+}
+h1{
+    margin-top: 3rem;
+    font-weight: bolder;
+    
+}
+h2{
+    font-weight: 500;
+    margin-top: 0.5rem;
+    margin:1rem;
+}
+::placeholder{
+    color:rgb(161, 158, 158);
+}
+h2.titulo{
+    font-weight: bolder;
+    margin-bottom: 3rem;
+}
+section.titulo{
+    text-align: ;
+}
+fieldset{
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+select{
+    padding: 0.2rem;
+    border-radius: 1rem;
+    border:none;
+    box-shadow: 0px 1px 4px grey;
+    
+}
+input{
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    border-radius: 1rem;
+    border:none;
+    box-shadow: 0px 1px 4px grey;
+    width: 50%;
+    margin-right: 2rem;
+}
+label{
+    margin:0.5rem
+}
+input.Buscador{
+    max-width: 70rem;
+    width: 90%;
+    border-radius: 2rem;
+    height: 2rem;
+    margin:1rem;
+    padding-left: 1rem;
+    border:  1px solid rgb(196, 193, 193);
+    box-shadow: 0px 0.5px 2px grey;
+}
+button{
+    margin:1rem;
+    padding: 0.5rem;
+    border-radius:1rem;
+    border: none;
+    color: white;
+    box-shadow: 0px 0.5px 2px grey;
+    background-color: var(--colorHeader);
+}
+button:hover{
+    box-shadow: inset 0px 0.5px 2px grey;;
+}

@@ -1,0 +1,11 @@
+section.listaProductos{
+    margin:2rem;
+}
+ul.liproductos{
+    display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+li{
+    list-style: none;
+}

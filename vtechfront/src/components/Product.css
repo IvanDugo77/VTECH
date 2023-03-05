@@ -1,0 +1,41 @@
+article.producto{
+    height: 20rem;
+    max-height: 20rem;
+    width: 13.3rem;
+}
+article.producto:hover{
+    box-shadow:  0px 4px 20px rgba(119, 247, 208, 0.938);
+    border-radius:1rem;
+}
+div.producto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.producto{
+    height: 15rem;
+    width: 13rem;
+    object-fit:cover;
+    border-radius: 1rem;
+    box-shadow: inset 0px -20px 20px rgba(0, 0, 0, 0.1);
+}
+p.productoPrecio{
+    font-weight: bolder;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    color:black;
+}
+p.producto{
+    margin-left: 0.5rem;
+    color:black;
+}
+p.Disponible{
+    margin-top:0.5rem;
+    color:green;
+    margin-left: 3.5rem;
+}
+p.Pendiente{
+    color:goldenrod
+}

@@ -1,0 +1,32 @@
+
+li{
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+ul.auth{
+    border: 2px solid var(--colorHeader);
+    background-color: var(--colorHeader);
+    border-radius: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+p.auth{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+p.auth:hover{
+    text-shadow: 1px 1px 2px grey;
+}
+
+@media (max-width: 552px) {
+    li.auth{
+        margin:0;
+    }
+    ul.auth{
+        display:flex;
+        flex-direction: row;
+    }
+}
