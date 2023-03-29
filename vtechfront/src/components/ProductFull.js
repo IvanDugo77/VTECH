@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { buyProductService} from "../services";
 import { useParams } from "react-router";
 import { aceptProductService } from "../services";
+import { noAceptProductService } from "../services";
 import useUser from "../hooks/useUser";
 import "./ProductFull.css";
 
@@ -58,6 +59,17 @@ export const ProductFull = ({product}) => {
         }finally{
             navigate(`/usuario/${user[0].id}`)
             
+        }
+    }
+
+    const noAcept = async (id) =>{
+        try{
+            const noAcept = await noAceptProductService({id})
+            toast.error(noAcept);
+        }catch(error){
+            setError(error.message);
+        }finally{
+            navigate(`/`);
         }
     }
 
@@ -118,7 +130,8 @@ return(
         {usuario && product[0].estado_venta == "Pendiente aceptar" ? <>
         <p className="contacto">El Usuario {usuario[0].usuario} quiere comprar tu producto. Pongase en contacto a traves del email: <a href={`mailto:${usuario[0].email}`}>{usuario[0].email}</a> </p>
         <section className="botonaceptar">
-        <button className="botonaceptar" onClick={() =>acept(id,token)}>Aceptar venta</button> </section>
+        <button className="botonaceptar" onClick={() =>acept(id,token)}>Aceptar venta</button>
+        <button className="botonaceptar" onClick={() => noAcept(id)}>Denegar venta</button> </section>
         </>
         : null }
 

@@ -190,3 +190,15 @@ export const aceptProductService = async ({id,token}) => {
    return json.message;
 
 }
+
+export const noAceptProductService = async ({id}) => {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND}/producto/noVendido/${id}`,{
+        method: 'POST'
+    }) ;
+    const json = await response.json();
+    if(!response.ok){
+        throw new Error(json.message);
+    }
+   return json.message;
+
+}

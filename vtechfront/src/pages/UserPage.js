@@ -41,7 +41,7 @@ export const UserPage =  () => {
             <ProductList products={myProducts}/> </> : <><h2  className="Titulo">Productos del usuario</h2>
             <ProductList products={disponibles}/> </>}
         <section className="tuC">
-            {misCompras ? <> <h2 className="Titulo">Tus ultimas Compras</h2><ProductList products={misCompras}/> </>: null}
+            {misCompras && user[0].id === usuario[0].id ? <> <h2 className="Titulo">Tus ultimas Compras</h2><ProductList products={misCompras}/> </>: null}
         </section>
         </section>
     );

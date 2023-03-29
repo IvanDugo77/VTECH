@@ -13,7 +13,7 @@ const fileUpload = require("express-fileupload");
 const {newUserController,loginController,getMyUserController,getUserController,userUpdateController} = require('./controllers/usuarios');
 //Importación de controladores de productos
 
-const {newProductController,getProductController,getProductsUserController,deleteProductController,getProductNameController,getProductsController,getProductPriceController,getProductCategoryController,getProductLocationController,buyProductController,soldProductcontroller} = require('./controllers/productos');
+const {newProductController,getProductController,noSoldProductcontroller,getProductsUserController,deleteProductController,getProductNameController,getProductsController,getProductPriceController,getProductCategoryController,getProductLocationController,buyProductController,soldProductcontroller} = require('./controllers/productos');
 
 //Importación de la carpeta middleware auth
 
@@ -68,6 +68,8 @@ app.post('/producto/compra/:id' ,authUser,buyProductController);
 
 //Aceptación de la compra y fecha
 app.post('/producto/vendido/:id',soldProductcontroller);
+//No aceptacion de la compra y fecha
+app.post('/producto/noVendido/:id',noSoldProductcontroller);
 
 //eliminar productos de la base de datos
 app.delete('/delproducto/:id', authUser, deleteProductController);

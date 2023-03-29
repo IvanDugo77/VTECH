@@ -1,5 +1,5 @@
 const { generateError, createPathIfNotExists } = require('../helpers');
-const {createProduct,getProductByNombre,getProductsUser,deleteProductById, getProducts,getProduct,searchProduct,soldProduct,userProduct} = require('../db/productos');
+const {createProduct,noSoldProduct,getProductByNombre,getProductsUser,deleteProductById, getProducts,getProduct,searchProduct,soldProduct,userProduct} = require('../db/productos');
 
 
 const path = require('path');
@@ -91,6 +91,22 @@ const soldProductcontroller = async (req, res, next) => {
   } catch (error) {
     next(error);
   }};
+
+  const noSoldProductcontroller = async (req, res, next) => {
+    try {
+      const {id} = req.params;
+      if(!id) {
+        throw generateError('No existe ese producto en la base de datos',400)
+      }
+      await noSoldProduct(id);
+      res.send({
+        status: 'ok',
+        message: `Has denegado la venta`,
+      });
+    } catch (error) {
+      next(error);
+    }};
+
 const getProductsController = async (req, res, next) => {
     try {
       const productos = await getProducts();
@@ -161,4 +177,5 @@ const deleteProductController = async (req, res, next) => {
     buyProductController,
     getProductsController,
     deleteProductController,
+    noSoldProductcontroller,
   };

@@ -73,7 +73,6 @@ const createProduct = async (usuario_id, nombre, descripcion, precio, imagen = '
     let connection;
     let estadoVenta = "Vendido";
      try {
-      
     connection = await getConnection();
     
     await connection.query(
@@ -84,6 +83,24 @@ const createProduct = async (usuario_id, nombre, descripcion, precio, imagen = '
     );} finally {
     if (connection) connection.release();
   }};
+
+  const noSoldProduct = async (productoId) => {
+    let connection;
+    let estadoVenta = "Disponible";
+    console.log(productoId);
+     try {
+      
+    connection = await getConnection();
+    
+    await connection.query(
+      `
+     UPDATE productos SET estado_venta = ? WHERE id = ?
+    `,
+      [estadoVenta,productoId]
+    );} finally {
+    if (connection) connection.release();
+  }};
+
   const userProduct = async (productoId) => {
     let connection;
     try{
@@ -185,4 +202,5 @@ const createProduct = async (usuario_id, nombre, descripcion, precio, imagen = '
     getProducts,
     getProduct,
     deleteProductById,
+    noSoldProduct,
   };
